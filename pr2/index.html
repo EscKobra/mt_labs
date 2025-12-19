@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №2 - BEM</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header__container">
+        <img src="img/logo-small.png" alt="Герб" class="header__logo">
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header__menu-item"><a href="#" class="header__menu-link">УНІВЕРСИТЕТ</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">НАВЧАННЯ</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">НАУКА</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">МІЖНАРОДНА СПІВПРАЦЯ</a></li>
+                <li class="header__menu-item"><a href="#" class="header__menu-link">СТУДЕНТУ</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main-content">
+    <section class="quick-links">
+        <div class="quick-links__container">
+            <h2 class="quick-links__title">Актуальне</h2>
+            <div class="quick-links__grid">
+                <div class="quick-card">
+                    <img src="img/icon-admission.png" alt="Вступнику" class="quick-card__icon">
+                    <h3 class="quick-card__name">Вступнику</h3>
+                    <p class="quick-card__desc">Інформація для абітурієнтів, правила прийому та спеціальності.</p>
+                </div>
+                <div class="quick-card">
+                    <img src="img/icon-schedule.png" alt="Розклад" class="quick-card__icon">
+                    <h3 class="quick-card__name">Розклад</h3>
+                    <p class="quick-card__desc">Розклад занять, екзаменаційних сесій та консультацій.</p>
+                </div>
+                <div class="quick-card">
+                    <img src="img/icon-payment.png" alt="Оплата" class="quick-card__icon">
+                    <h3 class="quick-card__name">Оплата</h3>
+                    <p class="quick-card__desc">Реквізити для оплати за навчання та проживання в гуртожитку.</p>
+                </div>
+                <div class="quick-card">
+                    <img src="img/icon-campus.png" alt="Кампус" class="quick-card__icon">
+                    <h3 class="quick-card__name">Кампус</h3>
+                    <p class="quick-card__desc">Мапа містечка, гуртожитки та інфраструктура університету.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news">
+        <div class="news__container">
+            <h2 class="news__title">Новини університету</h2>
+            <div class="news__list">
+                <article class="news-item">
+                    <img src="img/news-un.jpg" alt="UN" class="news-item__image">
+                    <time class="news-item__date">05 березня 2025</time>
+                    <h3 class="news-item__subject">Львівська політехніка увійшла до рейтингу найкращих університетів</h3>
+                </article>
+                <article class="news-item">
+                    <img src="img/news-conf.jpg" alt="Conf" class="news-item__image">
+                    <time class="news-item__date">04 березня 2025</time>
+                    <h3 class="news-item__subject">Відбулася міжнародна наукова конференція з комп'ютерних наук</h3>
+                </article>
+                <article class="news-item">
+                    <img src="img/news-startup.jpg" alt="Startup" class="news-item__image">
+                    <time class="news-item__date">03 березня 2025</time>
+                    <h3 class="news-item__subject">Студенти університету презентували стартапи на IT Arena</h3>
+                </article>
+                <article class="news-item">
+                    <img src="img/news-press.jpg" alt="Press" class="news-item__image">
+                    <time class="news-item__date">02 березня 2025</time>
+                    <h3 class="news-item__subject">Оголошено конкурс грантів для молодих вчених</h3>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__col">
+            <h4 class="footer__heading">Громадські організації</h4>
+            <a href="#" class="footer__link">Товариство «Просвіта»</a>
+            <a href="#" class="footer__link">Колегія студентів</a>
+        </div>
+        <div class="footer__col">
+            <h4 class="footer__heading">Зворотний зв'язок</h4>
+            <p class="footer__info">coffice@lpnu.ua</p>
+            <p class="footer__info">+38 032 258-22-82</p>
+        </div>
+        <div class="footer__col">
+            <p class="footer__info">© НУ «Львівська політехніка», 2005-2025</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

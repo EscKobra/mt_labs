@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота #6</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Лабораторна робота #6</h1>
+    </header>
+
+    <main class="container">
+        <section id="section-1">
+            <h2>Секція 1: Обтікання тексту</h2>
+            <div class="float-container">
+                <img src="img/image.svg" alt="SVG Image" class="float-img-left">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, felis ut porttitor convallis, velit nisi fringilla nunc, nec malesuada libero nulla sit amet neque. Ut et velit a sapien facilisis viverra sit amet a risus. Integer et velit nec odio tincidunt posuere at eget eros. Nullam auctor ex sed magna fermentum, eget scelerisque lacus malesuada.</p>
+                <p>Aenean fringilla ante ut ligula sollicitudin. Sed a eros vitae ligula venenatis malesuada. Curabitur malesuada, magna et sodales euismod, felis erat rutrum justo.</p>
+                <div class="clear"></div>
+            </div>
+            
+            <div class="float-container">
+                <img src="img/image.svg" alt="SVG Image" class="float-img-left">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non eros vel nisi dapibus lacinia nec vel augue. Integer scelerisque magna vel mi vestibulum, quis ultricies ex faucibus. Vivamus condimentum mi quis magna vehicula sagittis. Donec at arcu sed nunc sodales posuere. Vestibulum scelerisque id eros non lacinia.</p>
+                <div class="clear"></div>
+            </div>
+        </section>
+
+        <section id="section-2">
+            <h2>Секція 2: Багатоколонковий макет</h2>
+            <div class="multi-column-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, felis ut porttitor convallis, velit nisi fringilla nunc. Ut et velit a sapien facilisis viverra sit amet a risus. Integer et velit nec odio tincidunt posuere at eget eros.</p>
+                <p>Aenean fringilla ante ut ligula sollicitudin. Sed a eros vitae ligula venenatis malesuada. Curabitur malesuada, magna et sodales euismod, felis erat rutrum justo.</p>
+                <p>Vivamus condimentum mi quis magna vehicula sagittis. Vestibulum scelerisque id eros non lacinia. Mauris eu risus euismod, congue sapien quis, fermentum felis.</p>
+            </div>
+        </section>
+
+        <section id="section-3">
+            <h2>Секція 3: Модальне вікно - email</h2>
+            <button class="btn-subscribe" id="openModal">Підписатися</button>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque magna vel mi vestibulum, quis ultricies ex faucibus. Vivamus condimentum mi quis magna vehicula sagittis.</p>
+        </section>
+    </main>
+
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <p>Введіть вашу електронну пошту:</p>
+            <form id="emailForm">
+                <div class="modal-input-group">
+                    <input type="email" placeholder="example@mail.com" required>
+                    <button type="submit" class="btn-save">Зберегти</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('openModal');
+        const modal = document.getElementById('modalOverlay');
+
+        btn.onclick = () => {
+            modal.classList.remove('hidden');
+        };
+        
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.classList.add('hidden');
+            }
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <title>Практична робота 1</title>
+</head>
+<body>
+
+<h2>Варіант 1 — Карта зображень</h2>
+
+<img src="v1.jpg" usemap="#deskmap" alt="Робочий стіл">
+
+<map name="deskmap">
+  <area shape="rect" coords="50,120,350,420"
+        href="https://rozetka.com.ua/ua/notebooks/c80089/" target="_blank" alt="Комп'ютер">
+  <area shape="circle" coords="580,300,60"
+        href="https://www.citrus.ua/mobile-phones/" target="_blank" alt="Телефон">
+  <area shape="poly" coords="400,460,440,430,480,450,470,500,420,510"
+        href="https://comfy.ua/search?q=coffee" target="_blank" alt="Кава">
+  <area shape="default" nohref alt="">
+</map>
+
+<h2>Варіант 5 — Таблиця</h2>
+
+<table border="1" width="100%">
+  <caption>Варіант 5 — Таблиця</caption>
+  <thead>
+    <tr>
+      <th rowspan="2">Категорія</th>
+      <th colspan="3">Продукти</th>
+      <th rowspan="2">Примітка</th>
+    </tr>
+    <tr>
+      <th>Назва</th>
+      <th>Модель</th>
+      <th>Ціна</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td rowspan="2">Ноутбуки</td>
+      <td>Lenovo IdeaPad</td>
+      <td>IP 5</td>
+      <td>19999</td>
+      <td rowspan="2">Акція: -10%</td>
+    </tr>
+    <tr>
+      <td>ASUS VivoBook</td>
+      <td>V15</td>
+      <td>17500</td>
+    </tr>
+
+    <tr>
+      <td>Телефони</td>
+      <td colspan="3">
+        <table border="1" width="100%">
+          <tr><th>Назва</th><th>Модель</th><th>Ціна</th></tr>
+          <tr><td>Samsung</td><td>A54</td><td>11200</td></tr>
+          <tr><td>Apple</td><td>iPhone 14</td><td>29999</td></tr>
+        </table>
+      </td>
+      <td>Доставка 2–3 дні</td>
+    </tr>
+
+    <tr>
+      <td colspan="2">Кавомашини</td>
+      <td>SilverCoff</td>
+      <td>3499</td>
+      <td>Гарантія 12 міс.</td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td colspan="5">Приклад таблиці (демонстрація COLSPAN/ROWSPAN)</td>
+    </tr>
+  </tfoot>
+</table>
+
+</body>
+</html>

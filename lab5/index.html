@@ -1,70 +1,21 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Практична робота 1 — Варіант 1</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height:1.5; padding:20px; }
-    h1,h2 { color:#123; }
-    img { max-width:100%; height:auto; border:1px solid #ccc; }
-    table { border-collapse: collapse; margin-top:10px; }
-    table, th, td { border:1px solid #666; padding:8px; }
-    caption { font-weight:bold; margin-bottom:6px; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Lab 5 — CSS Box Model</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h1>Практична робота №1</h1>
-  <h2>Варіант 1 — Робочий стіл</h2>
 
-  <p>На зображенні визначені активні області: <strong>комп’ютер, телефон, кава</strong>. Натиснувши на кожну, можна перейти за відповідним посиланням.</p>
+<header id="hero_container">
+    <div class="hero-wrapper">
+        <div class="hero-content">
+            <h1>Національний університет «Львівська політехніка»</h1>
+            <p>Один із найстаріших технічних університетів України</p>
+            <a href="https://lpnu.ua/" class="hero-btn">Детальніше</a>
+        </div>
+    </div>
+</header>
 
-  <!-- зображення робочого столу -->
-  <img src="./IMG_20251017_103038_337.jpg" alt="Робочий стіл" usemap="#deskmap" width="800" height="500">
-
-  <!-- карта зображення -->
-  <map name="deskmap" id="deskmap">
-    <!-- комп’ютер -->
-    <area shape="rect" coords="50,120,350,380"
-          href="https://rozetka.com.ua/" target="_blank"
-          alt="Комп'ютер — магазин">
-    <!-- телефон -->
-    <area shape="circle" coords="520,160,60"
-          href="https://comfy.ua/" target="_blank"
-          alt="Телефон — магазин">
-    <!-- кава -->
-    <area shape="poly" coords="650,300,700,295,710,340,655,355"
-          href="https://stylus.ua/" target="_blank"
-          alt="Кава — магазин">
-    <area shape="default" alt="" nohref>
-  </map>
-
-  <p><em>Порада:</em> щоб точно підібрати координати для своєї картинки, відкрий <code>v1.jpg</code> у графічному редакторі (Paint, Photopea тощо) і подивись координати пікселів мишею, а потім заміни числа в атрибуті <code>coords</code>.</p>
-
-  <hr>
-
-  <h2>Завдання 2 — Таблиця з об’єднанням клітинок</h2>
-
-  <table>
-    <caption>Приклад таблиці</caption>
-    <tr>
-      <td colspan="2">Клітинка 1 (COLSPAN="2")</td>
-    </tr>
-    <tr>
-      <td rowspan="3">Клітинка 2 (ROWSPAN="3")</td>
-      <td>Клітинка 3</td>
-    </tr>
-    <tr>
-      <td>Клітинка 4</td>
-    </tr>
-    <tr>
-      <td>Клітинка 5</td>
-    </tr>
-  </table>
-
-  <footer style="margin-top:40px;">
-    <p><strong>Виконав(ла):</strong> ________________________</p>
-    <p><strong>Дата:</strong> ________________________</p>
-  </footer>
 </body>
 </html>
