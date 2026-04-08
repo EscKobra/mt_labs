@@ -1,6 +1,5 @@
 const API_URL = "https://69b11abdadac80b427c3fff2.mockapi.io/api/v1/todoItem";
 
-// Впищіть номер за журналом
 const USER_ID = 5;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -52,11 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
     el.querySelector(".task-card__title").textContent = task.title;
     el.querySelector(".task-card__tag").textContent = task.tag;
     el.querySelector(".task-card__desc").textContent = task.description;
-    el.querySelector(".task-card__deadline").textContent =
-      task.deadline || "Без дати";
-    el.querySelector(".task-card__created").textContent = formatDate(
-      task.createdAt,
-    );
+    el.querySelector(".task-card__deadline").textContent = task.deadline || "Без дати";
+    el.querySelector(".task-card__created").textContent = formatDate(task.createdAt);
 
     if (task.isDone) {
       el.querySelector(".task-card__status").textContent = `✅ Виконано`;
@@ -84,8 +80,22 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn.disabled = true;
 
     if (isEditing && currentEditId) {
-      alert("Завдання 2 - збереження змін (PUT)"); //// закоментуйте alert після виконання завдання
-      // !!!!!!!!!!!!!! Ващ код !!!!!!!!!!!!!!!!
+      try {
+        const response = await fetch(`${API_URL}/${currentEditId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(taskData)
+        });
+
+        if (response.ok) {
+          fetchTodos();
+          resetFormState();
+        }
+      } catch (error) {
+        console.error(error);
+      }
     } else {
       try {
         const response = await fetch(API_URL, {
@@ -127,12 +137,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (btn.classList.contains("btn--delete")) {
       if (confirm("Видалити цю задачу з сервера?")) {
-        alert("Завдання 1 - Функція видалення (DELETE)"); // закоментуйте alert після виконання завдання
-        // !!!!!!!!!!!!!! Ващ код !!!!!!!!!!!!!!!!
+        try {
+          const response = await fetch(`${API_URL}/${taskId}`, {
+            method: "DELETE"
+          });
+          
+          if (response.ok) {
+            card.remove();
+          }
+        } catch (error) {
+          console.error(error);
+        }
       }
     }
 
-    // complete
     if (btn.classList.contains("btn--complete")) {
       const isCurrentlyDone = card.classList.contains("task-card--done");
 
@@ -157,17 +175,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // edit
     if (btn.classList.contains("btn--edit-action")) {
       isEditing = true;
       currentEditId = taskId;
 
-      form.elements["title"].value =
-        card.querySelector(".task-card__title").textContent;
-      form.elements["description"].value =
-        card.querySelector(".task-card__desc").textContent;
-      form.elements["tag"].value =
-        card.querySelector(".task-card__tag").textContent;
+      form.elements["title"].value = card.querySelector(".task-card__title").textContent;
+      form.elements["description"].value = card.querySelector(".task-card__desc").textContent;
+      form.elements["tag"].value = card.querySelector(".task-card__tag").textContent;
 
       let deadline = card.querySelector(".task-card__deadline").textContent;
       form.elements["deadline"].value = deadline === "Без дати" ? "" : deadline;
