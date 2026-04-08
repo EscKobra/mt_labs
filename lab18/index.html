@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Todo App</title>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Todo List API (TS)</h1>
+        </header>
+
+        <form id="todoForm" class="task-form">
+            <input type="text" name="title" placeholder="Назва завдання" required>
+            <textarea name="description" placeholder="Опис"></textarea>
+            <input type="text" name="tag" placeholder="Тег (напр. Work)">
+            <input type="date" name="deadline">
+            <button type="submit" class="btn btn--primary">Додати завдання</button>
+        </form>
+
+        <div id="todoList" class="task-list">
+            </div>
+    </div>
+
+    <template id="task-template">
+        <div class="task-card">
+            <div class="task-card__content">
+                <h3 class="task-card__title"></h3>
+                <p class="task-card__desc"></p>
+            </div>
+        </div>
+    </template>
+
+    <script src="dist/bundle.js"></script>
+</body>
+</html>
