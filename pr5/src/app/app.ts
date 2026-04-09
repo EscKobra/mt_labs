@@ -1,12 +1,13 @@
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { TodoService } from './services/todo';
 import { Todo } from './models/todo.model';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.html',
   styleUrls: ['./app.scss'],
 })
@@ -20,7 +21,6 @@ export class App implements OnInit {
   isLoading = false;
   isEditing = false;
   currentEditId: string | null = null;
-
   formData: Todo = this.getEmptyForm();
 
   ngOnInit() {
@@ -40,18 +40,16 @@ export class App implements OnInit {
 
   fetchTodos() {
     this.isLoading = true;
-    this.cdr.detectChanges();
     this.todoService.getAll().subscribe({
       next: (data) => {
         this.todos = data.reverse();
         this.isLoading = false;
         this.cdr.detectChanges();
       },
-      error: (err) => {
-        console.error(err);
+      error: () => {
         this.isLoading = false;
         this.cdr.detectChanges();
-      },
+      }
     });
   }
 
@@ -94,6 +92,7 @@ export class App implements OnInit {
     this.isEditing = true;
     this.currentEditId = task.id || null;
     this.formData = { ...task };
+    this.cdr.detectChanges();
   }
 
   resetForm() {
